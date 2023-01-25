@@ -50,7 +50,6 @@ body{
     align-items: center;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-   
 } 
 .web{
     color: #4D5AE5;
@@ -71,13 +70,14 @@ body{
 .list{
     list-style: none; 
 }
- .site-nav .link {
+ .site-nav .link-activ {
     color: var(--title-text-color);
     text-decoration: none;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .link-activ:is(:hover,:focus){
         color:var(--active-buttons-background);
@@ -164,6 +164,7 @@ margin-right: 40px;
     padding: 16px 32px;
     display: block;
     margin:auto;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-main:hover,
 .button-main:focus {
@@ -189,6 +190,7 @@ margin-right: 40px;
     clip-path: inset(50%);
     margin: -1px;
 }
+
 /* ------------------------------------------------------features--------------------------------- */
 .features{
     display: flex;
@@ -273,6 +275,8 @@ border-radius: 0px 0px 4px 4px;
     border-radius: 50%;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .social-list-link:is(:hover,:focus){
     background-color: var(--active-buttons-background);
@@ -312,6 +316,7 @@ border-radius: 0px 0px 4px 4px;
     border-radius: 4px;  
     width: 100%;
     height: 100%;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customers-icon {
     fill: currentColor;
@@ -371,6 +376,7 @@ color: #FFFFFF;
     align-items: center;
     justify-content: center;
     color: #ffffff;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-icon {
     fill:currentColor;
@@ -411,6 +417,7 @@ margin: auto;
     line-height: 1.5;
     letter-spacing: 0.04em;
     padding: 12px 24px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .buttons-portfolio:hover,
 .buttons-portfolio:focus {
@@ -429,6 +436,7 @@ flex-basis:calc((100% - 48px)/3);
 background: #ffffff;
 border-bottom: 0.5px solid #F4F4FD;
 box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .employees-list:is(:hover,:focus){
 box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 
@@ -444,5 +452,67 @@ padding-left: 16px;
 }
 .mention{
     text-decoration: none;
+   
+}
+.list-img-wrapper{
+    position: relative;
+    overflow: hidden;
+}
+.overlay{
+    position: absolute;
+    background-color: var(--primary-background-color);
+    color: #F4F4FD;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow:auto;
+    transform: translate(0, 100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.mention:hover .overlay,
+.mention:focus .overlay{
+     transform: translate(0, 0);
+}
+/* ---------------------MODAL WINDOW---------------- */
+.backdrop{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+}
+ /* .is-hiden{
+    opacity: 1;
+    pointer-events: none;
+} */
+.modal{
+position: absolute;
+top: 50%;
+left: 50%;
+width: 408px;
+height: 576px;
+background: #FCFCFC;
+}
+        
+.close-btn{
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    background: #E7E9FC;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}

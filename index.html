@@ -48,11 +48,18 @@
         <div class="container">
         <h1 class="hero-title">Effective Solutions for Your Business
         </h1>
-        <button class="button-main" type="button"> Order Service
+        <button class="button-main" type="button" data-modal-open> Order Service
         </button> 
         </div>
+        <!-- ------------------------Модальне вікно------------------------ -->
         <div class="backdrop is-hiden" data-modal>
-            <div class="modal"></div>
+            <div class="modal">
+                <button class="close-btn" type="button" data-modal-close>
+                    <svg class="close-icon" width="8" height="8">
+                        <use href="./images/sprite.svg#icon-close" ></use>
+                    </svg>
+                </button>
+            </div>
         </div>
     </section>
     <!--Наші переваги-->
@@ -394,5 +401,17 @@
     </div>
     </div>
    </footer>
+   <!-- ------------------------Модальне вікно------------------------ -->
+   <div class="backdrop is-hiden" data-modal>
+    <div class="modal">
+        <button class="close-btn" type="button" data-modal-close>
+            <svg class="close-icon" width="8" height="8">
+                <use href="./images/sprite.svg#icon-close" ></use>
+            </svg>
+        </button>
+    </div>
+</div>
+</section>
+   <script src="./js/modal.js"></script>
 </body>
 </html>
