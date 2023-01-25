@@ -27,6 +27,7 @@ padding-right: 15px;
     --primary-background-color: #4D5AE5;
     --active-buttons-background: #404BBF;
     --main-line-height: 1.33;
+    --transitionn-dur-and-func:250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 body{
     color: var(--primary-text-color);
@@ -487,10 +488,11 @@ padding-left: 16px;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
 }
- /* .is-hiden{
-    opacity: 1;
+.backdrop.is-hiden{
+    opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-} */
+}
 .modal{
 position: absolute;
 top: 50%;
@@ -502,6 +504,9 @@ background: #FCFCFC;
         
 .close-btn{
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 24px;
     right: 24px;
     width: 24px;
@@ -511,8 +516,15 @@ background: #FCFCFC;
     border-radius: 50%;
     padding: 0;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
+    transition: background-color var(--transitionn-dur-and-func);
 }
+.close-icon{
+    transition: fill var(--transitionn-dur-and-func);
+}
+.close-btn:is(:hover,:focus){
+    background-color: var(--active-buttons-background);
+    fill: #ffffff;
+}
+
+
+    
